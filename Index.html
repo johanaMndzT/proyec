@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página sobre Mascotas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    .image {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .breeds {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Mascotas: Cuidadoos, Alimentación y Más</h1>
+
+  <select id="animalSelect">
+    <option value="perro">Perro</option>
+    <option value="gato">Gato</option>
+    <!-- Puedes agregar más opciones para otros tipos de animales -->
+  </select>
+
+  <div id="breedsPerro" class="breeds">
+    <h2>Razas de Perros y sus Cuidados</h2>
+    <ul>
+      <li>Golden Retriever - Ejercicio regular y cepillado frecuente.</li>
+      <li>Bulldog Francés - Cuidado de la piel y las arrugas.</li>
+      <li>Labrador Retriever - Entrenamiento y socialización temprana.</li>
+    </ul>
+    <img src="https://via.placeholder.com/600x400" alt="Golden Retriever" class="image">
+    <img src="https://via.placeholder.com/600x400" alt="Bulldog Francés" class="image">
+    <img src="https://via.placeholder.com/600x400" alt="Labrador Retriever" class="image">
+  </div>
+
+  <div id="breedsGato" class="breeds">
+    <h2>Razas de Gatos y sus Cuidados: </h2>
+    <ul>
+      <li>Siamés - Estimulación mental y compañía.</li>
+      <li>Maine Coon - Cepillado regular y atención dental.</li>
+      <li>Persa - Cuidado del pelaje y prevención de obesidad.</li>
+    </ul>
+    <img src="https://via.placeholder.com/600x400" alt="Siamés" class="image">
+    <img src="https://via.placeholder.com/600x400" alt="Maine Coon" class="image">
+    <img src="https://via.placeholder.com/600x400" alt="Persa" class="image">
+  </div>
+
+  <!-- Aquí puedes agregar más bloques de información e imágenes para otros tipos de animales -->
+
+</div>
+
+<script>
+  document.getElementById('animalSelect').addEventListener('change', function() {
+    var selectedAnimal = this.value;
+    var allBreeds = document.querySelectorAll('.breeds');
+    allBreeds.forEach(function(breed) {
+      breed.style.display = 'none';
+    });
+    document.getElementById('breeds' + selectedAnimal.charAt(0).toUpperCase() + selectedAnimal.slice(1)).style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
